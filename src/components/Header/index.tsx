@@ -1,7 +1,5 @@
 import React from 'react'
-
-import { Button } from './Button'
-import './header.css'
+import { Button } from '../Button'
 
 interface HeaderProps {
   user?: Record<string, unknown>
@@ -10,7 +8,12 @@ interface HeaderProps {
   onCreateAccount: () => void
 }
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
+export const Header: React.FC<HeaderProps> = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount,
+}: HeaderProps) => (
   <header>
     <div className="wrapper">
       <div>

@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Header } from './Header'
-import './page.css'
+import { Header } from '../Header'
 
 interface PageProps {
   user?: Record<string, unknown>
@@ -10,7 +9,12 @@ interface PageProps {
   onCreateAccount: () => void
 }
 
-export const Page = ({ user, onLogin, onLogout, onCreateAccount }: PageProps) => (
+export const Page: React.FC<PageProps> = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount,
+}: PageProps) => (
   <article>
     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
 
